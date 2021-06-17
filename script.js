@@ -24,7 +24,7 @@ function getWeather(cityName) {
 
     todayweatherEl.classList.remove("d-none");
 
-    // Parse response to display current weather
+    // Phrase response to display current weather
         const currentDate = new Date(response.data.dt * 1000);
         const day = currentDate.getDate();
         const month = currentDate.getMonth() + 1;
