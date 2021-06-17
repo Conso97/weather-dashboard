@@ -1,0 +1,18 @@
+
+#current-pic {
+  float: right;
+  /* position: absolute; */
+}
+
+#city-name{
+    float: left;
+    /* position: absolute; */
+}
+
+#city-img{
+    display: inline-block;
+}
+
+.weather-icon{
+  width:3px;
+}

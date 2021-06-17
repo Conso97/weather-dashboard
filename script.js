@@ -4,9 +4,9 @@ function initPage() {
     const clearEl = document.getElementById("clear-history");
     const nameEl = document.getElementById("city-name");
     const currentPicEl = document.getElementById("current-pic");
-    const currentTempEl = document.getElementById("temperature");
-    const currentHumidityEl = document.getElementById("humidity");
-    const currentWindEl = document.getElementById("wind-speed");
+    const currentTempEl = document.getElementById("Temp");
+    const currentWindEl = document.getElementById("Wind");
+    const currentHumidityEl = document.getElementById("Humidity");
     const currentUVEl = document.getElementById("UV-index");
     const historyEl = document.getElementById("history");
     var fivedayEl = document.getElementById("fiveday-header");
@@ -33,9 +33,10 @@ function initPage() {
                 let weatherPic = response.data.weather[0].icon;
                 currentPicEl.setAttribute("src", "https://openweathermap.org/img/wn/" + weatherPic + "@2x.png");
                 currentPicEl.setAttribute("alt", response.data.weather[0].description);
-                currentTempEl.innerHTML = "Temperature: " + k2f(response.data.main.temp) + " &#176F";
+                currentPicEl.setAttribute("style", "width:5%");
+                currentTempEl.innerHTML = "Temp: " + k2f(response.data.main.temp) + " &#176F";
+                currentWindEl.innerHTML = "Wind: " + response.data.wind.speed + " MPH";
                 currentHumidityEl.innerHTML = "Humidity: " + response.data.main.humidity + "%";
-                currentWindEl.innerHTML = "Wind Speed: " + response.data.wind.speed + " MPH";
                 
                 // Get UV Index
                 let lat = response.data.coord.lat;
@@ -86,10 +87,14 @@ function initPage() {
                             const forecastWeatherEl = document.createElement("img");
                             forecastWeatherEl.setAttribute("src", "https://openweathermap.org/img/wn/" + response.data.list[forecastIndex].weather[0].icon + "@2x.png");
                             forecastWeatherEl.setAttribute("alt", response.data.list[forecastIndex].weather[0].description);
+                            forecastWeatherEl.setAttribute("style", "width:30%");
                             forecastEls[i].append(forecastWeatherEl);
                             const forecastTempEl = document.createElement("p");
                             forecastTempEl.innerHTML = "Temp: " + k2f(response.data.list[forecastIndex].main.temp) + " &#176F";
                             forecastEls[i].append(forecastTempEl);
+                            const forecastWindEl = document.createElement("p");
+                            forecastWindEl.innerHTML = "Wind: " + response.data.list[forecastIndex].wind.speed + "MPH";
+                            forecastEls[i].append(forecastWindEl);
                             const forecastHumidityEl = document.createElement("p");
                             forecastHumidityEl.innerHTML = "Humidity: " + response.data.list[forecastIndex].main.humidity + "%";
                             forecastEls[i].append(forecastHumidityEl);
@@ -108,11 +113,11 @@ function initPage() {
     })
 
     // Clear History button
-    clearEl.addEventListener("click", function () {
-        localStorage.clear();
-        searchHistory = [];
-        renderSearchHistory();
-    })
+    // clearEl.addEventListener("click", function () {
+    //     localStorage.clear();
+    //     searchHistory = [];
+    //     renderSearchHistory();
+    // })
 
     function k2f(K) {
         return Math.floor((K - 273.15) * 1.8 + 32);
