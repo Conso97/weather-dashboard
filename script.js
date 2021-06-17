@@ -131,6 +131,7 @@ function initPage() {
             historyItem.setAttribute("readonly", true);
             historyItem.setAttribute("class", "form-control d-block bg-white");
             historyItem.setAttribute("value", searchHistory[i]);
+            historyItem.setAttribute("style", "margin-top:3%");
             historyItem.addEventListener("click", function () {
                 getWeather(historyItem.value);
             })
