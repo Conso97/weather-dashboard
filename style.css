@@ -52,5 +52,7 @@
 }
 
 .forecast{
-  background-color:#264d73;
+  background-color:#0f2942d5;
+  padding: 0px;
+  border-radius: -2px;
 }
