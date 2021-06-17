@@ -37,3 +37,20 @@
   border: none;
   border-radius: 5px;
 }
+
+#today-weather{
+  border-color: black;
+}
+
+#enter-city{
+  border-color: rgba(0, 0, 0, 0.603);
+}
+
+#search-button{
+  width:100%;
+  padding: 0px;
+}
+
+.forecast{
+  background-color:#264d73;
+}
