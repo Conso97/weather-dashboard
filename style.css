@@ -1,14 +1,39 @@
 
 #current-pic {
-  float: right;
-  /* position: absolute; */
+  position: relative;
+  width: 10%;
 }
 
 #city-name{
     float: left;
-    /* position: absolute; */
+    font-weight: bold;
 }
 
 #city-img{
     display: inline-block;
+ } 
+
+#line {
+  border-color: black;
+}
+
+#title {
+  font-weight: bold;
+}
+
+.mt-1{
+  font-weight: bold;
+}
+
+#weather-dashboard {
+  background-image: linear-gradient(to right, rgb(20, 63, 121) , rgba(40, 6, 71, 0.973));
+}
+
+.history-element {
+  margin-top:3%;
+  text-align:center;
+  background-color:rgba(128, 128, 128, 0.356);
+  width: 100%;
+  border: none;
+  border-radius: 5px;
 }

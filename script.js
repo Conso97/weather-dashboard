@@ -33,7 +33,7 @@ function initPage() {
                 let weatherPic = response.data.weather[0].icon;
                 currentPicEl.setAttribute("src", "https://openweathermap.org/img/wn/" + weatherPic + "@2x.png");
                 currentPicEl.setAttribute("alt", response.data.weather[0].description);
-                currentPicEl.setAttribute("style", "width:5%");
+                // currentPicEl.setAttribute("style", "width:5%");
                 currentTempEl.innerHTML = "Temp: " + k2f(response.data.main.temp) + " &#176F";
                 currentWindEl.innerHTML = "Wind: " + response.data.wind.speed + " MPH";
                 currentHumidityEl.innerHTML = "Humidity: " + response.data.main.humidity + "%";
@@ -129,9 +129,9 @@ function initPage() {
             const historyItem = document.createElement("input");
             historyItem.setAttribute("type", "text");
             historyItem.setAttribute("readonly", true);
-            historyItem.setAttribute("class", "form-control d-block bg-white");
+            historyItem.setAttribute("class", "form-control d-block bg-secondary");
             historyItem.setAttribute("value", searchHistory[i]);
-            historyItem.setAttribute("style", "margin-top:3%");
+            historyItem.setAttribute("class", "history-element");
             historyItem.addEventListener("click", function () {
                 getWeather(historyItem.value);
             })
